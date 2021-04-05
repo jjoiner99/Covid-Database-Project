@@ -37,7 +37,7 @@
             <td>Register a Nurse</td><br> 
             <table>
                 <tr>
-                    <form action = "/NurseReg.php">
+                    <form action = "Admin.php" method = "post">
                         <label for="fName">First Name:</label><br>
                         <input type="text" id="fName" name="fName"><br>
                         <label for="MI">Middle Initial:</label>
@@ -54,6 +54,7 @@
                         <input type="text" id="phone" name="phone"><br>
                         <label for="addr">Address:</label>
                         <input type="text" id="addr" name="addr"><br>
+                        <input type="hidden" id="route" name="route" value="regNurse"> 
                         <input type="submit" value="Submit">
                     </form>
                 </tr>
@@ -63,7 +64,7 @@
             <td>Update Nurse Info</td>
             <br>
             <table>
-                <form action = "/NurseInfoUP.php">
+                <form action = "Admin.php" method = "post">
                     <label for="fName">First Name:</label><br>
                     <input type="text" id="fName" name="fName"><br>
                     <label for="MI">Middle Initial:</label>
@@ -76,6 +77,7 @@
                     <input type="text" id="age" name="age"><br>
                     <label for="gender">Gender:</label>
                     <input type="text" id="gender" name="gender"><br>
+                    <input type="hidden" id="route" name="route" value="updNurse"> 
                     <input type="submit" value="Submit">
                 </form>
             </table>
@@ -84,9 +86,11 @@
             <td>Delete a Nurse</td>
             <br>
             <table>
-                <form action = "/delNurse.php">
+                <form action = "Admin.php" method = "post">
                     <label for="empIDDel">EmployeeID:</label>
                     <input type="text" id="empIDDel" name="empIDDel"><br>
+                    <input type="hidden" id="route" name="route" value="delNurse"> 
+                    <input type="submit" value="Submit">
                 </form>
             </table>
             <br>
@@ -94,13 +98,15 @@
             <td>Add Vaccine</td>
             <br>
             <table>
-                <form action = "/addVaccine.php">
+                <form action = "Admin.php" method = "post">
                     <label for="vName">Vaccine Name:</label>
                     <input type="text" id="vName" name="vName"><br>
                     <label for="compName">Company Name:</label>
                     <input type="text" id="compName" name="compName"><br>
                     <label for="numDoses">Number of Doses:</label>
                     <input type="text" id="numDoses" name="numDoses"><br>
+                    <input type="hidden" id="route" name="route" value="addVaccine"> 
+                    <input type="submit" value="Submit">
                 </form>
             </table>
             <br>
@@ -108,26 +114,28 @@
             <td>Update Vaccine</td><!--TODO-->
             <br>
             <br>
-            <td>View Nurse Info</td>
+            <td>View Nurse Info</td><!--TODO: create Nurse info page template-->
             <br>
             <table>
-                <form action = "/viewNurse.php">
+                <form action = "Admin.php" method = "post"> 
                     <label for="empIDNurse">Nurse Employee ID:</label>
                     <input type="text" id="empIDNurse" name="empIDNurse"><br>
+                    <input type="hidden" id="route" name="route" value="viewNurse"> 
                 </form>
             </table>
             <br>
             <br>
-            <td>View Patient Info</td>
+            <td>View Patient Info</td><!--TODO: create Patient info page template-->
             <br>
             <table>
-                <form action = "/viewPatient.php">
+                <form action = "Admin.php" method = "post">
                     <label for="fNamePat">Patient First Name:</label>
                     <input type="text" id="fNamePat" name="fNamePat"><br>
                     <label for="miPat">Patient Middle Initial:</label>
                     <input type="text" id="miPat" name="miPat"><br>
                     <label for="lNamePat">Patient Last Name:</label>
                     <input type="text" id="lNamePat" name="lNamePat"><br>
+                    <input type="hidden" id="route" name="route" value="viewPatient"> 
                     <input type="submit" value="Submit">
                 </form>
             </table>

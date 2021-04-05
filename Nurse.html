@@ -38,11 +38,12 @@
             <br>
             <table>
                 <tr>
-                    <form action = "/updateNursestuff.php">
+                    <form action = "Nurse.php" method = "post">
                         <label for="addr#">New Address:</label>
                         <input type="text" id="addr#" name="addr#"><br>
                         <label for="newphone">New Phone Number:</label>
                         <input type="text" id="newphone" name="newphone"><br>
+                        <input type="hidden" id="route" name="route" value="updMyInfo"> 
                     </form>
                 </tr>
             </table>
@@ -51,8 +52,9 @@
             <td>Schedule a Time Slot</td>
             <br>
             <table>
-                <form action = "/timeslotN.php">
+                <form action = "Nurse.php" method = "post">
                     <!--TODO-->
+                    <input type="hidden" id="route" name="route" value="schedule"> 
                 </form>
             </table>
             <br>
@@ -60,17 +62,19 @@
             <td>View Your Information</td>
             <br>
             <table>
-                <form action = "/nursesInfo.php">
+                <form action = "Nurse.php" method = "post">
                     <label for="emp#N">Nurse Employee ID:</label>
                     <input type="text" id="emp#N" name="emp#N"><br>
+                    <input type="hidden" id="route" name="route" value="viewMyInfo"> 
                 </form>
             </table>
             <br><br>
             <td>Record a Vaccine</td>
             <br>
             <table>
-                <form action = "/recVaccine.php">
+                <form action = "Nurse.php" method = "post">
                 <!--ToDO-->
+                    <input type="hidden" id="route" name="route" value="recVaccine"> 
                 </form>
             </table>
         </div>
