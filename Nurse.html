@@ -62,7 +62,7 @@
             <td>View Your Information</td>
             <br>
             <table>
-                <form action = "Nurse.php" method = "post">
+                <form action = "NurseViewInfo.html" method = "post">
                     <label for="emp#N">Nurse Employee ID:</label>
                     <input type="text" id="emp#N" name="emp#N"><br>
                     <input type="hidden" id="route" name="route" value="viewMyInfo"> 
@@ -77,5 +77,9 @@
                     <input type="hidden" id="route" name="route" value="recVaccine"> 
                 </form>
             </table>
+            <br><br>
+            <form action="Login.html"><!--Possibly switch with a .php file?--> 
+                <input type="submit" value="Log Out">
+            </form>
         </div>
     </body>

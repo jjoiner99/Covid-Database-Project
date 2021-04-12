@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <link rel="shortcut icon" href="#">
+    <style>
+        body { 
+            background-color: rgb(150, 150, 150);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #config {
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            background-color: #001d62bd;
+            color: white;
+            border-style: solid;
+            border-color: black;
+            border-width: 2px;
+            text-align: center;
+            border-radius: 25px;
+        }
+        #glcanvas {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: white;
+        }
+    </style>
+    <body>
+        <canvas id="glcanvas"></canvas>
+        <div id="config">
+            <td>Patient Info:</td>
+            <br>
+            <table>
+                <form action = "AdminPatinfo.php" method = "post">
+                    <label for="fNamePat">Patient First Name:</label>
+                    <input type="text" id="fNamePat" name="fNamePat"><br>
+                    <label for="miPat">Patient Middle Initial:</label>
+                    <input type="text" id="miPat" name="miPat"><br>
+                    <label for="lNamePat">Patient Last Name:</label>
+                    <input type="text" id="lNamePat" name="lNamePat"><br>
+                    <input type="hidden" id="route" name="route" value="viewPatient"> 
+                    <input type="submit" value="Submit">
+                </form>
+            </table>
+            <br><br>
+            <table>
+                <form action="Admin.html"> <!--Possibly switch with a .php file?-->
+                    <input type="submit" value="Back">
+                </form>
+            </table>
+    </body>

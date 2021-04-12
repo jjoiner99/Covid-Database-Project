@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <link rel="shortcut icon" href="#">
+    <style>
+        body { 
+            background-color: rgb(150, 150, 150);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #config {
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            background-color: #001d62bd;
+            color: white;
+            border-style: solid;
+            border-color: black;
+            border-width: 2px;
+            text-align: center;
+            border-radius: 25px;
+        }
+        #glcanvas {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: white;
+        }
+    </style>
+    <body>
+        <canvas id="glcanvas"></canvas>
+        <div id="config">
+            <td>Register Here</td>
+            <br>
+            <table>
+                <form action="PatRegister.html">
+                    <input type="submit" value="Register">
+                </form>
+            </table>
+            <br><br>
+            <td>Update Info:</td>
+            <br>
+            <table>
+                <form action="PatUpdateinfo.html">
+                    <input type="submit" value="Update">
+                </form>
+            </table>
+            <br><br>
+            <td>Schedule a Vaccination Time:</td>
+            <br>
+            <table>
+                <form action="schedTime.html">
+                    <input type="submit" value="Schedule">
+                </form>
+            </table>
+            <br><br>
+            <td>Cancel a Vaccination Time:</td>
+            <br>
+            <table>
+                <form action="cancelTime.html">
+                    <input type="submit" value="Cancel">
+                </form>
+            </table>
+            <br><br>
+            <td>View Your Info:</td>
+            <br>
+            <table>
+                <form action="PatviewInfo.html">
+                    <input type="submit" value="Here">
+                    <!--Possibly display table here, or in info page above-->
+                </form>
+            </table>
+            <br><br>
+            <form action="Login.html"><!--Possibly switch with a .php file?--> 
+                <input type="submit" value="Log Out">
+            </form>
+    </body>

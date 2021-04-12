@@ -64,21 +64,8 @@
             <td>Update Nurse Info</td>
             <br>
             <table>
-                <form action = "Admin.php" method = "post">
-                    <label for="fName">First Name:</label><br>
-                    <input type="text" id="fName" name="fName"><br>
-                    <label for="MI">Middle Initial:</label>
-                    <input type="text" id="MI" name="MI"><br>
-                    <label for="lName">Last Name:</label>
-                    <input type="text" id="lName" name="lName"><br>
-                    <label for="empID">Employee ID:</label>
-                    <input type="text" id="empID" name="empID"><br>
-                    <label for="age">Age:</label>
-                    <input type="text" id="age" name="age"><br>
-                    <label for="gender">Gender:</label>
-                    <input type="text" id="gender" name="gender"><br>
-                    <input type="hidden" id="route" name="route" value="updNurse"> 
-                    <input type="submit" value="Submit">
+                <form action = "AdminUpdateNurseinfo.html" method = "post">
+                    <input type="submit" value="Update Nurse">
                 </form>
             </table>
             <br>
@@ -111,33 +98,29 @@
             </table>
             <br>
             <br>
-            <td>Update Vaccine</td><!--TODO-->
+            <td>Update Vaccine</td>
             <br>
             <br>
-            <td>View Nurse Info</td><!--TODO: create Nurse info page template-->
+            <td>View Nurse Info</td>
             <br>
             <table>
-                <form action = "Admin.php" method = "post"> 
-                    <label for="empIDNurse">Nurse Employee ID:</label>
-                    <input type="text" id="empIDNurse" name="empIDNurse"><br>
-                    <input type="hidden" id="route" name="route" value="viewNurse"> 
+                <form action = "AdminNurseInfo.html" method = "post"> 
+                    <input type="submit" value="Click Here">
                 </form>
             </table>
             <br>
             <br>
-            <td>View Patient Info</td><!--TODO: create Patient info page template-->
+            <td>View Patient Info</td>
             <br>
             <table>
-                <form action = "Admin.php" method = "post">
-                    <label for="fNamePat">Patient First Name:</label>
-                    <input type="text" id="fNamePat" name="fNamePat"><br>
-                    <label for="miPat">Patient Middle Initial:</label>
-                    <input type="text" id="miPat" name="miPat"><br>
-                    <label for="lNamePat">Patient Last Name:</label>
-                    <input type="text" id="lNamePat" name="lNamePat"><br>
-                    <input type="hidden" id="route" name="route" value="viewPatient"> 
-                    <input type="submit" value="Submit">
+                <form action = "AdminPatinfo.html" method = "post">
+                    <input type="submit" value="Click Here">
                 </form>
             </table>
+            <br><br>
+            <td>Log Out:</td>
+            <form action="Login.html"> <!--Possibly switch with a .php file?-->
+                <input type="submit" value="Log Out">
+            </form>
         </div>
     </body>
