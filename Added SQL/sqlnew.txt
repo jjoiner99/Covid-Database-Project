@@ -1,0 +1,61 @@
+//these are for the admin
+	//registering a new nurse 
+	$sql =  "INSERT INTO new registarnurse (FirstName,MiddleInitial,LastName,EmployeeId,Age,Gender,PhoneNumber,Address) values($_POST['fName'], $_POST['MI'], $_POST['lName'], $_POST['empID'], $_POST['age'], $_POST['gender'], $_POST['phone'], $_POST['addr']);";
+	
+	//Update a nurse information
+	$sql = "UPDATE nurse SET Fname = $_POST['fName'], MI = $_POST['MI'], Lname = $_POST['lName'], employeed =  $_POST['empID'], Gender = $_POST['gender'], age = $_POST['age'];";
+
+	//Delete Nurse Info
+	$sql = "DELETE FROM nurse WHERE employeed =  $_POST['empID'];";
+
+	// adding vaccine
+	//if the variables from the get information textboxs are  $_POST['VM'], $_POST['CN'],$_POST['Ndoes'] 
+	$sql = "INSERT INTO vaccination (name, company, immunization,description) values($_POST['VM'], $_POST['CN'],$_POST['Ndoes']);";
+
+	//Update Vaccine
+	$sql = "UPDATE vaccination SET immunization = immunization + $_POST['Ndoes'] WHERE name = $_POST['VM'];";
+	
+	//View nurse info
+	$sql = "SELECT * FROM nurse WHERE employeeid =  $_POST['empID'];";
+	
+	//View Patient info
+	$sql = "SELECT" * FROM patient;";
+
+	 
+
+//these are for the nurses
+	//Update nurse 
+	$sql = "UPDATE nurse SET PhoneNumber = $_POST['phone'],address = $_POST['addr']; ";
+	
+	//schedule for nurse
+	//Need to create a database that will hold office time. 
+	
+	//view Nurse personal info
+	$sql = "SELECT * FROM nurse WHERE employeed = $_POST['empID'];";
+	
+	//record Vaccine
+	//I have to add informations to nurse_sechdule, vaccine and patients.
+	$sql = "SELECT INSERT INTO vaccination_record (PFname,PLname,NFname,NLname,day,date,time,VACCINENAME,dose) values ($_POST['PFname'], $_POST['PLname'],$_POST['NFname'], $_POST['NLname'],$_POST['day'], $_POST['date'],$_POST['time'], $_POST['VACCINENAME'],$_POST['dose']);";	
+	
+
+//these are for the patients
+	//Registering a new patient all you have to replace every variable with the variables that you made to read in each item. 
+	$sql = "INSERT INTO newpatient(Fname,Middle,Lname, ssn,age,gender,race,occupation_class, Medical_history,phonenumber,address) values(Fname,Middle,Lname, ssn,age,gender,race,occupation_class, Medical_history,phonenumber,address);";
+
+	//Update Patient 
+	
+	
+	//Schedule a Vaccination Time 
+	
+	
+	//Cancel a Vaccination time
+	
+
+	//View Patients infomation. 
+	$sql = "SELECT * FROM patient WHERE Fname = and Lname = ;";
+
+
+
+//this is for the login page 
+	//check if it exist
+	$sql = "SELECT * FROM login WHERE username = $_POST['user'], password = $_POST['pass'], table = $_POST['role'];";
