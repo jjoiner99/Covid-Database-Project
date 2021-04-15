@@ -37,7 +37,7 @@
             <td>Register a Nurse</td><br> 
             <table>
                 <tr>
-                    <form action = "Admin.php" method = "post">
+                    <form action = "AdminRegisterNurse.php" method = "post">
                         <label for="fName">First Name:</label><br>
                         <input type="text" id="fName" name="fName"><br>
                         <label for="MI">Middle Initial:</label>
@@ -65,6 +65,8 @@
             <br>
             <table>
                 <form action = "AdminUpdateNurseinfo.html" method = "post">
+                    <label for="empIDNurse">Enter Nurse Employee ID</label>
+                    <input type="text" id="empIDNurse" name="empIDNurse">
                     <input type="submit" value="Update Nurse">
                 </form>
             </table>
@@ -73,8 +75,8 @@
             <td>Delete a Nurse</td>
             <br>
             <table>
-                <form action = "Admin.php" method = "post">
-                    <label for="empIDDel">EmployeeID:</label>
+                <form action = "adminDeleteNurse.php" method = "post">
+                    <label for="empIDDel">Nurse Employee ID:</label>
                     <input type="text" id="empIDDel" name="empIDDel"><br>
                     <input type="hidden" id="route" name="route" value="delNurse"> 
                     <input type="submit" value="Submit">
@@ -85,7 +87,7 @@
             <td>Add Vaccine</td>
             <br>
             <table>
-                <form action = "Admin.php" method = "post">
+                <form action = "AddVaccine.php" method = "post">
                     <label for="vName">Vaccine Name:</label>
                     <input type="text" id="vName" name="vName"><br>
                     <label for="compName">Company Name:</label>
@@ -100,11 +102,20 @@
             <br>
             <td>Update Vaccine</td>
             <br>
-            <br>
+            <table>
+                <form action = "adminUpdateVaccine.html" method = "post">
+                    <label for="vName">Enter Vaccine Name</label>
+                    <input type="text" id="vName" name="vName">
+                    <input type="submit" value="Update Vaccine">
+                </form>
+            </table>
+            <br><br>
             <td>View Nurse Info</td>
             <br>
             <table>
                 <form action = "AdminNurseInfo.html" method = "post"> 
+                    <label for="empIDNurse">Nurse Employee ID:</label>
+                    <input type="text" id="empIDNurse" name="empIDNurse">
                     <input type="submit" value="Click Here">
                 </form>
             </table>
@@ -114,6 +125,12 @@
             <br>
             <table>
                 <form action = "AdminPatinfo.html" method = "post">
+                    <label for="fNamePat">Enter Patient First Name</label>
+                    <input type="text" id="fNamePat" name="fNamePat">
+                    <label for="lNamePat">Enter Patient Last Name</label>
+                    <input type="text" id="lNamePat" name="lNamePat">
+                    <label for="miPat">Enter Patient Middle Initial</label>
+                    <input type="text" id="miPat" name="miPat">
                     <input type="submit" value="Click Here">
                 </form>
             </table>

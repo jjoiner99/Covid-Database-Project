@@ -34,18 +34,16 @@
     <body>
         <canvas id="glcanvas"></canvas>
         <div id="config">
-            <td>Register Here</td>
-            <br>
-            <table>
-                <form action="PatRegister.html">
-                    <input type="submit" value="Register">
-                </form>
-            </table>
-            <br><br>
             <td>Update Info:</td>
             <br>
             <table>
                 <form action="PatUpdateinfo.html">
+                    <label for="fName">Enter First Name</label>
+                    <input type="text" id="fName" name="fName">
+                    <label for="lName">Enter Last Name</label>
+                    <input type="text" id="lName" name="lName">
+                    <label for="mi">Enter Middle Initial</label>
+                    <input type="text" id="mi" name="mi">
                     <input type="submit" value="Update">
                 </form>
             </table>
@@ -70,6 +68,12 @@
             <br>
             <table>
                 <form action="PatviewInfo.html">
+                    <label for="fName">Enter First Name</label>
+                    <input type="text" id="fName" name="fName">
+                    <label for="lName">Enter Last Name</label>
+                    <input type="text" id="lName" name="lName">
+                    <label for="mi">Enter Middle Initial</label>
+                    <input type="text" id="mi" name="mi">
                     <input type="submit" value="Here">
                     <!--Possibly display table here, or in info page above-->
                 </form>
