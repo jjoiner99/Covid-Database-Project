@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <link rel="shortcut icon" href="#">
+    <style>
+        body { 
+            background-color: rgb(150, 150, 150);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #config {
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            background-color: #001d62bd;
+            color: white;
+            border-style: solid;
+            border-color: black;
+            border-width: 2px;
+            text-align: center;
+            border-radius: 25px;
+        }
+        #glcanvas {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: white;
+        }
+    </style>
+    <body>
+        <canvas id="glcanvas"></canvas>
+        <div id="config">
+            <td>Update Nurse Info</td>
+            <br>
+            <table>
+                <tr>
+                    <form action = "NurseUpdateInfo.html" method = "post">
+                        <label for="EmpIDNurse">Enter Your Employee ID</label>
+                        <input type="text" id="empIDNurse" name="empIDNurse"><br>
+                        <input type="hidden" id="route" name="route" value="updMyInfo"> 
+                    </form>
+                </tr>
+            </table>
+            <br>
+            <br>
+            <td>Schedule a Time Slot</td>
+            <br>
+            <table>
+                <form action = "Nurse.php" method = "post">
+                    <!--TODO-->
+                    <input type="hidden" id="route" name="route" value="schedule"> 
+                </form>
+            </table>
+            <br>
+            <br>
+            <td>View Your Information</td>
+            <br>
+            <table>
+                <form action = "NurseViewInfo.html" method = "post">
+                    <label for="emp#N">Nurse Employee ID:</label>
+                    <input type="text" id="emp#N" name="emp#N"><br>
+                    <input type="hidden" id="route" name="route" value="viewMyInfo"> 
+                </form>
+            </table>
+            <br><br>
+            <td>Record a Vaccine</td>
+            <br>
+            <table>
+                <form action = "Nurse.php" method = "post">
+                <!--ToDO-->
+                    <input type="hidden" id="route" name="route" value="recVaccine"> 
+                </form>
+            </table>
+            <br><br>
+            <form action="Nurse.php" method = "post">
+                <input type="submit" value="Log Out">
+                <input type="hidden" id="route" name="route" value="logout"> 
+            </form>
+        </div>
+    </body>
