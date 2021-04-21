@@ -51,8 +51,10 @@
             <br>
             <table>
                 <form action = "Nurse.php" method = "post">
-                    <!--TODO-->
-                    <input type="hidden" id="route" name="route" value="schedule"> 
+                    <input type="date" id="scheduledDate"><br>
+                    <input type="time" id="scheduledTime"><br>
+                    <input type="hidden" id="route" name="route" value="schedule">
+                    <input type="submit" value="Schedule"> 
                 </form>
             </table>
             <br>
@@ -71,8 +73,14 @@
             <br>
             <table>
                 <form action = "Nurse.php" method = "post">
-                <!--ToDO-->
+                    <label for="vName">Vaccine Name:</label>
+                    <input type="text" id="vName" name="vName"><br>
+                    <label for="doseNum">Dose Number:</label>
+                    <input type="number" id="doseNum" name="doseNum" min="1"><br>
+                    <input type="time" id="vacTime"><br>
+                    <input type="date" id="vacDate"><br>
                     <input type="hidden" id="route" name="route" value="recVaccine"> 
+                    <input type="submit" value="Record">
                 </form>
             </table>
             <br><br>
