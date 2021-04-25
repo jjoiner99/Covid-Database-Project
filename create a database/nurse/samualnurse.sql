@@ -1,0 +1,1 @@
+INSERT INTO `nurse` VALUES ('Samuel','N/A','Adams','XXXX',22,'Male',235022004,'1456 North Lemon Ave Chicago IL 60633');

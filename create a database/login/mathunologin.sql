@@ -1,0 +1,1 @@
+INSERT INTO `login` VALUES('Mathuno34','dpse45#','patient');
