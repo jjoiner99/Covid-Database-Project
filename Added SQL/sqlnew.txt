@@ -20,7 +20,13 @@
 	
 	//View Patient info
 	$sql = "SELECT" * FROM patient;";
-
+	
+	//sechdule time for vaccine
+	$sql = "INSERT INTO schedule_time (Dates,times) values($_POST['date'],$_POST['time']):";
+	
+	//this is to view the sechdule time for vaccine.
+	$sql1 = "SELECT * FROM schedule_time;";
+	 
 	 
 
 //these are for the nurses
@@ -40,16 +46,16 @@
 
 //these are for the patients
 	//Registering a new patient all you have to replace every variable with the variables that you made to read in each item. 
-	$sql = "INSERT INTO newpatient(Fname,Middle,Lname, ssn,age,gender,race,occupation_class, Medical_history,phonenumber,address) values(Fname,Middle,Lname, ssn,age,gender,race,occupation_class, Medical_history,phonenumber,address);";
+	$sql = "INSERT INTO patient(Fname,Middle,Lname, ssn,age,gender,race,occupation_class, Medical_history,phonenumber,address) values(Fname,Middle,Lname, ssn,age,gender,race,occupation_class, Medical_history,phonenumber,address);";
 
 	//Update Patient 
-	
+	$sql = "INSERT INTO patient {Fname, Middle, Lname,ssn,age,Race, occupation_class, MHD, Phonenum, address, password} values(&_POS['First'],$_POS['MI'],$_POS['Last'],$_POS['ssn'],$_POS['age'],$_POS['Race'],$_POS['occupation'],$_POS['medical'],$_POS['phonenumber'],$_POS['address'],$_POS['password'];)";
 	
 	//Schedule a Vaccination Time 
 	
 	
 	//Cancel a Vaccination time
-	
+	$sql = "DROP "
 
 	//View Patients infomation. 
 	$sql = "SELECT * FROM patient WHERE Fname = and Lname = ;";
