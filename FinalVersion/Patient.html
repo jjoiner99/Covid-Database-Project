@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <link rel="shortcut icon" href="#">
+    <style>
+        body { 
+            background-color: rgb(150, 150, 150);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #config {
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            background-color: #001d62bd;
+            color: white;
+            border-style: solid;
+            border-color: black;
+            border-width: 2px;
+            text-align: center;
+            border-radius: 25px;
+        }
+        #glcanvas {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: white;
+        }
+    </style>
+    <body>
+        <canvas id="glcanvas"></canvas>
+        <div id="config">
+            <td>Update Info:</td>
+            <br>
+            <table>
+                <form action="Patient.php" method="post">
+                    <label for="phone">Phone Number:</label><br>
+                    <input type="number" id="phone" name="phone" required><br>
+                    <label for="addr">Address:</label><br>
+                    <textarea id="addr" name="addr" rows=5 required></textarea><br>
+                    <input type="hidden" id="route" name="route" value="updInfo"> 
+                    <input type="submit" value="Update">
+                </form>
+            </table>
+            %%%UPDINFORESULT%%%
+            <br><br>
+            <td>Schedule a Vaccination Time:</td>
+            <br>
+            <table>
+                <form action="Patient.php" method="post">
+                    <input type="hidden" id="route" name="route" value="loadVac">
+                    <input type="submit" value="Check Available Vaccines"> <br>
+                </form>
+                
+                <form action="Patient.php" method="post"> 
+                    %%%SCHEDULEFORM%%%
+                    <input type='hidden' id='route' name='route' value='schedule'>
+                </form>
+            </table>
+            %%%SCHEDULERESULT%%%
+            <br><br>
+            <td>Cancel a Vaccination Time:</td>
+            <br>
+            <table>
+                <form action="Patient.php" method="post">
+                    <input type="hidden" id="route" name="route" value="checkTimeTable"> 
+                    <input type="submit" value="Check Time Table"><br>
+                </form>
+                <form action="Patient.php" method="post">
+                    %%%SCHEDULETABLE%%%
+                    <input type="hidden" id="route" name="route" value="cancelSchedule"> 
+                </form>
+            </table>
+            <br><br>
+            <td>View Your Info:</td>
+            <br>
+            <table>
+                <form action="Patient.php" method="post">
+                    <input type="submit" value="Here">
+                    <input type="hidden" id="route" name="route" value="viewInfo"> 
+                </form>
+                <form action = "Patient.php" method="post">
+                    <table style="margin: 0 auto">
+                        %%%PATIENTINFOTABLE%%%
+                    </table>
+            </table>
+            <br><br>
+            <form action="Patient.php" method = "post">
+                <input type="submit" value="Log Out">
+                <input type="hidden" id="route" name="route" value="logout"> 
+            </form>
+    </body>

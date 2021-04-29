@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <link rel="shortcut icon" href="#">
+    <style>
+        body { 
+            background-color: rgb(150, 150, 150);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #config {
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            background-color: #001d62bd;
+            color: white;
+            border-style: solid;
+            border-color: black;
+            border-width: 2px;
+            text-align: center;
+            border-radius: 25px;
+        }
+        #glcanvas {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: white;
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+        -moz-appearance: textfield;
+        }
+    </style>
+    <body>
+        <canvas id="glcanvas"></canvas>
+        <div id="config">
+            <td>Enter Your Information Here:</td>
+            <table>
+                <tr>
+                    <form action="PatientReg.php" method = "post">
+                        <br>
+                        <label for="fName">Name:</label><br>
+                        <input type="text" id="Name" name="Name" required><br>
+                        <label for="SSN">Social Security Number:</label><br>
+                        <input type="number" id="SSN" name="SSN" required><br>
+                        <label for="Age">Age:</label><br>
+                        <input type="number" id="Age" name="Age" min="1" required><br>
+                        <label for="gender">Gender:</label><br>
+                        <select id="gender" name="gender" required>
+                            <option value="male">Male</option> 
+                            <option value="female">Female</option>
+                        </select><br>
+                        <label for="race">Race:</label><br>
+                        <input type="text" id="race" name="race" required><br>
+                        <label for="Occupation">Occupation Class:</label><br>
+                        <input type="text" id="Occupation" name="Occupation" required><br>
+                        <label for="medHist">Medical History Description:</label><br>
+                        <textarea id="medHist" name="medHist" rows=10 required></textarea><br>
+                        <label for="phone">Phone Number:</label><br>
+                        <input type="number" id="phone" name="phone" required><br>
+                        <label for="addr">Address:</label><br>
+                        <textarea id="addr" name="addr" rows=5 required></textarea><br>
+                        <label for="uName">Username:</label><br>
+                        <input type="text" id="uName" name="uName" required><br>
+                        <label for="pWord">Password:</label><br>
+                        <input type="text" id="pWord" name="pWord" required><br>
+                        <input type="submit" value="Submit"><br>
+                        <input type="hidden" id="route" name="route" value="submit">
+                    </form>
+                    %%%ERROR%%%
+                    <br><br>
+                    <form action="PatientReg.php" method="post"> 
+                        <input type="submit" value="Back">
+                        <input type="hidden" id="route" name="route" value="back">
+                    </form>
+                </tr>
+            </table>
+    </body>

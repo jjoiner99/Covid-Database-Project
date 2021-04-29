@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <link rel="shortcut icon" href="#">
+    <style>
+        body { 
+            background-color: rgb(150, 150, 150);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #config {
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            background-color: #001d62bd;
+            color: white;
+            border-style: solid;
+            border-color: black;
+            border-width: 2px;
+            text-align: center;
+            border-radius: 25px;
+        }
+        #glcanvas {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: white;
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+        -moz-appearance: textfield;
+        }
+    </style>
+    <body>
+        <canvas id="glcanvas"></canvas>
+        <div id="config">
+            <td>Register a Nurse</td><br> 
+            <table>
+                <tr>
+                    <form action = "Admin.php" method = "post">
+                        <label for="Name">Name:</label>
+                        <input type="text" id="Name" name="Name" required><br>
+                        <label for="empID">Employee ID:</label>
+                        <input type="number" id="empID" name="empID" required><br>
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" name="age" required><br>
+                        <label for="gender">Gender:</label>
+                        <select id="gender" name="gender" required>
+                            <option value="male">Male</option> 
+                            <option value="female">Female</option>
+                        </select><br>
+                        <label for="phone">Phone Number:</label><br>
+                        <input type="number" id="phone" name="phone" required><br>
+                        <label for="addr">Address:</label><br>
+                        <textarea id="addr" name="addr" rows=5 required></textarea><br>
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required><br>
+                        <label for="password">Password:</label>
+                        <input type="text" id="password" name="password" required><br>
+                        <input type="hidden" id="route" name="route" value="regNurse"> 
+                        <input type="submit" value="Submit">
+                    </form>
+                </tr>
+            </table>
+            %%%NURSEREGRESULT%%%
+            <br>
+            <br>
+            <td>Update Nurse Info</td>
+            <br>
+            <table>
+                <form action = "Admin.php" method = "post">
+                    <label for="empID">Employee of the Nurse to Update:</label>
+                    <input type="number" id="empID" name="empID" required><br>
+                    <label for="Name">Name:</label>
+                    <input type="text" id="Name" name="Name" required><br>
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" required><br>
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="male">Male</option> 
+                        <option value="female">Female</option>
+                    </select><br>
+                    <label for="phone">Phone Number:</label><br>
+                    <input type="number" id="phone" name="phone" required><br>
+                    <label for="addr">Address:</label><br>
+                    <textarea id="addr" name="addr" rows=5 required></textarea><br>
+                    <input type="hidden" id="route" name="route" value="updNurse"> 
+                    <input type="submit" value="Update Nurse">
+                </form>
+            </table>
+            %%%NURSEUPDRESULT%%%
+            <br>
+            <br>
+            <td>Delete a Nurse</td>
+            <br>
+            <table>
+                <form action = "Admin.php" method = "post">
+                    <label for="empID">Nurse Employee ID:</label>
+                    <input type="number" id="empID" name="empID" required><br>
+                    <input type="hidden" id="route" name="route" value="delNurse"> 
+                    <input type="submit" value="Submit">
+                </form>
+            </table>
+            %%%NURSEDELRESULT%%%
+            <br>
+            <br>
+            <td>View Nurse Schedule</td>
+            <br>
+            <table>
+                <form action="Admin.php" method="post">
+                    <label for="empID">Nurse Employee ID: </label>
+                    <input type="number" id="empID" name="empID" required><br>
+                    <input type="hidden" id="route" name="route" value="showSchedule">
+                    <input type="submit" value="Show Schedule Table"> 
+                </form>
+                <table style="margin: 0 auto">
+                    %%%SCHEDULETIMETABLE%%%
+                </table>
+            </table>
+            <br><br>
+            <td>Add Vaccine</td>
+            <br>
+            <table>
+                <form action = "Admin.php" method = "post">
+                    <label for="vName">Vaccine Name:</label>
+                    <input type="text" id="vName" name="vName" required><br>
+                    <label for="compName">Company Name:</label>
+                    <input type="text" id="compName" name="compName" required><br>
+                    <label for="dose">Dose:</label>
+                    <input type="number" id="dose" name="dose" min="0" required><br>
+                    <label for="amount">Amount:</label>
+                    <input type="number" id="amount" name="amount" min="0" required><br>
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" rows=5 required></textarea><br>
+                    <input type="hidden" id="route" name="route" value="addVaccine"> 
+                    <input type="submit" value="Submit">
+                </form>
+            </table>
+            %%%ADDVACCINERESULT%%%
+            <br>
+            <br>
+            <td>Update Vaccine</td>
+            <br>
+            <table>
+                <form action = "Admin.php" method = "post">
+                    <label for="vName">Enter Vaccine Name to Update:</label>
+                    <input type="text" id="vName" name="vName" required><br>
+                    <label for="amount">Added Amount:</label>
+                    <input type="number" id="amount" name="amount" min="0" required><br>
+                    <input type="hidden" id="route" name="route" value="updateVaccine"> 
+                    <input type="submit" value="Update Vaccine">
+                </form>
+            </table>
+            %%%UPDVACCINERESULT%%%
+            <br><br>
+            <td>View Nurse Info</td>
+            <br>
+            <table>
+                <form action = "Admin.php" method = "post"> 
+                    <label for="empID">Nurse Employee ID: </label>
+                    <input type="number" id="empID" name="empID">
+                    <input type="hidden" id="route" name="route" value="viewNurseInfo"> 
+                    <input type="submit" value="Click Here">
+                </form>
+                <table style="margin: 0 auto">
+                    %%%NURSEINFOTABLE%%%
+                </table>
+            </table>
+            %%%NURSEINFORESULT%%%
+            <br>
+            <br>
+            <td>View Patient Info</td>
+            <br>
+            <table>
+                <form action = "Admin.php" method = "post">
+                    <label for="Name">Enter Patient Name</label>
+                    <input type="text" id="Name" name="Name">
+                    <input type="hidden" id="route" name="route" value="viewPatientInfo"> 
+                    <input type="submit" value="Click Here">
+                </form>
+                <table style="margin: 0 auto">  
+                    %%%PATINFOTABLE%%%
+                </table>
+            </table>
+            %%%PATINFORESULT%%%
+            <br><br>
+            <form action="Admin.php" method = "post">
+                <input type="submit" value="Log Out">
+                <input type="hidden" id="route" name="route" value="logout"> 
+            </form>
+        </div>
+    </body>
