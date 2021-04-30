@@ -13,4 +13,4 @@ Suggestion install and run step:
 5. Put "FinalVersion" inside
 6. Click "Start" to start Apache
 7. In your broswer, type in "localhost/FinalVersion"
-8. Enjoy our APP
+8. Default Admin account & password: admin, admin
