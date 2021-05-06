@@ -1,0 +1,64 @@
+CREATE TABLE Patient (
+    Username VARCHAR(20) NOT NULL PRIMARY KEY,
+    PWD VARCHAR(20) NOT NULL,
+    Name VARCHAR(50) NOT NULL,
+    SSN INT NOT NULL,
+    Age INT NOT NULL,
+    Gender VARCHAR(10) NOT NULL,
+    Race VARCHAR(20) NOT NULL,
+    Occupation VARCHAR(50) NOT NULL,
+    MedicalHistory TEXT NOT NULL,
+    PhoneNumber VARCHAR(20) NOT NULL,
+    Address TEXT NOT NULL
+) ENGINE=INNODB;
+
+CREATE TABLE Nurse (
+    Username VARCHAR(20) NOT NULL PRIMARY KEY,
+    PWD VARCHAR(20) NOT NULL,
+    Name VARCHAR(50) NOT NULL,
+    EmployeeID INT NOT NULL,
+    Age INT NOT NULL,
+    Gender VARCHAR(10) NOT NULL,
+    PhoneNumber VARCHAR(20) NOT NULL,
+    Address TEXT NOT NULL
+) ENGINE=INNODB;
+
+CREATE TABLE Admin (
+    Username VARCHAR(20) NOT NULL PRIMARY KEY,
+    PWD VARCHAR(20) NOT NULL
+) ENGINE=INNODB;
+
+CREATE TABLE NurseScheduling (
+    Date DATETIME NOT NULL,
+    EmployeeID INT NOT NULL,
+    primary key (Date)
+) ENGINE=INNODB;
+
+CREATE TABLE Vaccine (
+    Name VARCHAR(50) NOT NULL PRIMARY KEY,
+    Company VARCHAR(50) NOT NULL,
+    Dose INT NOT NULL,
+    Description VARCHAR(50) NOT NULL
+) ENGINE=INNODB;
+
+CREATE TABLE VaccinationScheduling (
+    Name VARCHAR(50) NOT NULL,
+    Date DATETIME NOT NULL,
+   	Vaccine VARCHAR(50) NOT NULL,
+    Period VARCHAR(10) NOT NULL,
+    primary key (Name, Date)
+) ENGINE=INNODB;
+
+CREATE TABLE VaccineDelivery (
+    Name VARCHAR(50) NOT NULL PRIMARY KEY,
+    Amount INT NOT NULL
+) ENGINE=INNODB;
+
+CREATE TABLE VaccinationRecord (
+    PatientName VARCHAR(50) NOT NULL,
+    NurseName VARCHAR(50) NOT NULL,
+    Date DATETIME NOT NULL,
+    Vaccine VARCHAR(50) NOT NULL,
+    Dose INT NOT NULL,
+    primary key (PatientName, Vaccine, Date)
+) ENGINE=INNODB;
